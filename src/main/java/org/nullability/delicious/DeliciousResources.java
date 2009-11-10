@@ -1,5 +1,8 @@
 package org.nullability.delicious;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * 
  * @author Daniel Quirino Oliveira - danielqo@gmail.com
@@ -30,7 +33,13 @@ enum DeliciousResources
         return urlPattern;
     }
     
-    
+    public int parameters() {
+		Pattern pattern = Pattern.compile("\\{[0-9]+\\}");
+		Matcher matcher = pattern.matcher(this.urlPattern);
+		int counter = 0;
+		while(matcher.find()) counter++;
+		return counter;
+	}
 
     
 }
