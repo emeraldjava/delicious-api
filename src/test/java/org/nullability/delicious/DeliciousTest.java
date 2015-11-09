@@ -16,9 +16,7 @@ import org.junit.Test;
  *
  */
 public class DeliciousTest{
-	
-	//FIXME implements more tests
-	
+
 	private Delicious delicious;
 	private long begin;
 
@@ -27,8 +25,8 @@ public class DeliciousTest{
 	}
 
 	@Before
-	protected void setUp() throws Exception {
-		delicious = new Delicious("", "");
+	public void setUp() throws Exception {
+		delicious = new Delicious("","");
 	}
 
 	@Test
