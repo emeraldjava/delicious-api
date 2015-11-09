@@ -1,11 +1,10 @@
 package org.nullability.delicious;
 
-import static org.junit.Assert.*;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,9 +28,10 @@ public class DeliciousTest{
 
 	@Before
 	public void setup() throws Exception {
-		String username = System.getProperty(ENV_USERNAME);
-		String password = System.getProperty(ENV_PASSWORD);
-		System.out.println(username);
+		String username = System.getenv(ENV_USERNAME);
+		String password = System.getenv(ENV_PASSWORD);
+		System.out.println("username:"+username);
+		Assert.assertNotNull(username);
 		delicious = new Delicious(username,password);
 	}
 
@@ -41,7 +41,7 @@ public class DeliciousTest{
 		for (Post post : l) {
 			System.out.println(post.markup());
 		}
-		assertFalse(l.isEmpty());
+		Assert.assertFalse(l.isEmpty());
 	}
 
 //	@Test
