@@ -4,7 +4,7 @@ jdk:
 env:
   matrix:
 
-script: mvn clean package
+script: mvn clean package -DskipTests=true
 
 notifications:
   email:
