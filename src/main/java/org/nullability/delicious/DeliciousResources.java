@@ -15,6 +15,7 @@ enum DeliciousResources
     GETALLPOSTS("https://api.del.icio.us/v1/posts/all?tag={0}"),
     GETPOSTSBYFILTER("https://api.del.icio.us/v1/posts/get?tag={0}&dt={1}&url={2}"),
     GETRECENTPOSTS("https://api.del.icio.us/v1/posts/recent?tag={0}&count={1}"),
+    GETRECENTPOSTSALL("https://api.del.icio.us/v1/posts/recent"),
     GETLASTUPDATE("https://api.del.icio.us/v1/posts/update"),
     GETALLTAGS("https://api.del.icio.us/v1/tags/get"),
     RENAMETAG("https://api.del.icio.us/v1/tags/rename?old={0}&new={1}"),

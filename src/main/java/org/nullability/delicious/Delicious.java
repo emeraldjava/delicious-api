@@ -8,13 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -51,6 +45,12 @@ public class Delicious {
 			throws Exception {
 		URL url = (new URLBuilder()).buildURL(DeliciousResources.GETRECENTPOSTS,
 				tag != null ? tag : "", count != null ? count.toString() : "");
+		return getPosts(url);
+	}
+
+	public List<Post> getLastestPosts()
+			throws Exception {
+		URL url = (new URLBuilder()).buildURL(DeliciousResources.GETRECENTPOSTSALL);
 		return getPosts(url);
 	}
 
@@ -245,6 +245,10 @@ public class Delicious {
 				for (int k = as.length; j < k; j++) {
 					String thisTag = as[j];
 					postTags.add(thisTag);
+
+                    Tag tag = new Tag();
+                    tag.setName(thisTag);
+                    p.getTags().add(tag);
 				}
 
 				p.setDescription(description.getNodeValue());

@@ -1,5 +1,6 @@
 package org.nullability.delicious;
 
+import java.io.File;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.Date;
@@ -85,4 +86,18 @@ public class Post implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Post{" +
+				"description='" + description + '\'' +
+				", hash='" + hash + '\'' +
+				", tags=" + tags +
+				", lastUpdate=" + lastUpdate +
+				", url=" + url +
+				'}';
+	}
+
+	public String markup() {
+		return "- [" + description + "]("+ url +")";
+	}
 }

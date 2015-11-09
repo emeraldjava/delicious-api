@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author Daniel Quirino Oliveira - danielqo@gmail.com
  *
  */
-public class Tag implements Serializable {
+public class Tag implements Serializable, Comparable {
 	
     private static final long serialVersionUID = 0x4e8bed43L;
     private String name;
@@ -50,5 +50,14 @@ public class Tag implements Serializable {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return this.getName();
+	}
+
+	public int compareTo(Object o) {
+		return 0;
 	}
 }
