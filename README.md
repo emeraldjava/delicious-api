@@ -1,4 +1,4 @@
-Client API for Delicious (http://delicious.com) social bookmarking service for Java applications. 
+Client API for Delicious (http://del.icio.us) social bookmarking service for Java applications.
 
 [![Build Status](https://travis-ci.org/emeraldjava/delicious-api.svg?branch=master)](https://travis-ci.org/emeraldjava/delicious-api)
 
